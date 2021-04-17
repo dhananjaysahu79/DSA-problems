@@ -3,7 +3,7 @@
 #Python 3 solution
 
 arr = list(map(int,input().split()))
-s = 0 #variable to calculate at each index
+s = 0 #variable to calculate sum at each index
 curr_max = arr[0] #variable to store maximum at each index
 for i in arr:
     s += i
