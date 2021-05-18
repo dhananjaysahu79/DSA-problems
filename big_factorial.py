@@ -29,3 +29,20 @@ while num != '1':
     fac = curr_fact
     num = str(int(num) - 1)
 print(fac)
+
+# Again a naive solution but with better time complexity(since n is small
+# so we dont need to compute it as a string. Hence one nested loop is reduced)
+
+n = int(input())
+fac = '1'
+while n > 1:
+    carry = 0; curr_product = ''
+    for i in fac[::-1]:
+        temp = int(i) * n + carry
+        carry = temp // 10
+        curr_product = curr_product + str(temp % 10)
+    u = str(carry)
+    if carry: curr_product = curr_product + u[::-1]
+    fac = curr_product[::-1]
+    n -= 1
+print(fac)
