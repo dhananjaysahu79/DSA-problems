@@ -30,3 +30,20 @@ for i in range(len(arr)-1):
 print(mx)
 
 # O(n) Approach
+# So in the first iteration we will move backward and find the maximum profit
+# at the particular index.
+# Then we will iterate from forward to find the maximum at particular index + we will add
+# maximum profit generated after that index.(simply breaking the array in two subsequence of differrent sizes)
+
+arr = list(map(int,input().split()))
+n = len(arr)
+maxi = [0] * n
+mx = arr[n-1]
+for i in range(n-2, 0, -1):
+    mx = max(mx, arr[i])
+    maxi[i] = max(maxi[i+1], mx - arr[i])
+mn = arr[0]
+for i in range(1,n):
+    mn = min(arr[i], mn)
+    maxi[i] = max(maxi[i-1], arr[i] - mn + maxi[i])
+print(maxi[-1])
