@@ -15,3 +15,6 @@ class Solution:
                 nums[a] = nums[b]
             b += 1
         return a + 1
+
+# one liner solution
+nums[:] = sorted(set(nums))
