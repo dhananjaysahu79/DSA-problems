@@ -11,9 +11,9 @@ class LinkedList:
     #inserting the data at the start/begining.
     #three things we will have to do:
     # 1: creating the Node
-    # 2: store the adress of current head node, since we are inserting at start
-    # so to will point to the current head Node
-    # 3: change the current head node to the newly added nodeas its now at the start
+    # 2: store the adress of current head node, since we are inserting at start so to will
+    # point to the current head Node
+    # 3: change the current head node to the newly added node as its now at the start
     def insertAtStart(self, data):
         node = Node(data,self.head)
         self.head = node
@@ -57,10 +57,44 @@ class LinkedList:
 
 
     #deleting the data at the start/begining.(queue pop out)
+    def deleteAtStart(self):
+        self.head = self.head.next
+
 
     #deleting data at the end.(stack pop out)
-    #deleting data at the anywhere/index.
+    def deleteAtend(self):
+        itr = self.head
+        prev = itr
+        while itr:
+            if itr == self.tail:
+                if self.tail == self.head:
+                    self.head = None
+                prev.next = None
+                self.tail = prev
+            prev = itr
+            itr = itr.next
 
+
+    #deleting data at the anywhere/index.
+    # we are taking 1 based indexing everywhere in all index operations
+
+    def deleteAtIndex(self, index):
+        if index == 1:
+            self.head = self.head.next
+            return
+        itr = self.head
+        prev = itr
+        c = 1
+        while itr:
+            if c == index:
+                itr = itr.next
+                prev.next = itr
+                if itr == None:
+                    self.tail = prev
+                return
+            prev = itr
+            itr = itr.next
+            c += 1
 
 
     #printing the data.
@@ -90,6 +124,16 @@ ll = LinkedList()
 for _ in range(int(input())):
     ll.insertAtEnd(int(input()))
 ll.print()
-
 print("\n"+ll.search(41))
+ll.print()
+print()
+ll.deleteAtIndex(6)
+ll.print()
+print()
+# directly access to the recently added data of the linkedlist(stack)
+print(ll.tail.data)
+
+# directly access to the first added data of the linkedlist(queue)
+print(ll.head.data)
+
 
