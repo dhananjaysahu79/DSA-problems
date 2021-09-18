@@ -1,3 +1,6 @@
+# binary search in a matrix
+# O(logn + logm)
+
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         a = 0
