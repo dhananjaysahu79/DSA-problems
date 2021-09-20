@@ -11,7 +11,9 @@ class Solution:
         itr = head
         for _ in range(mid-1): itr = itr.next
         return itr
-# optimal solution is O(n//2) using fast and slow pointers
+
+
+# optimal solution is O(n) using fast and slow pointers
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
         slow = fast = head
