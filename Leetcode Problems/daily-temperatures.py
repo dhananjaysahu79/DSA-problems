@@ -23,9 +23,8 @@ class Solution:
         ans = [0] * n
         stack = []
         for i in range(n):
-            if len(stack):
-                while len(stack) and temp[i] > temp[stack[-1]]:
-                    index = stack.pop()
-                    ans[index] = i - index
+            while len(stack) and temp[i] > temp[stack[-1]]:
+                index = stack.pop()
+                ans[index] = i - index
             stack.append(i)
         return ans
