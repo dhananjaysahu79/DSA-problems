@@ -1,4 +1,5 @@
 # Leetcode: 2090 | Medium
+# Approach 1: O(n) time using prefix sum
 
 class Solution:
     def getAverages(self, nums: List[int], k: int) -> List[int]:
