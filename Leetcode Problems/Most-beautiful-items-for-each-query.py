@@ -1,3 +1,5 @@
+# Leetcode: 2070 | Medium
+
 class Solution:
     def maximumBeauty(self, items: List[List[int]], Q: List[int]) -> List[int]:
         
