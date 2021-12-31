@@ -24,7 +24,7 @@ class Solution:
             r = n % k
             if r == 0: return c
             s.add(r)
-            n = r * 10 + 1          #We only need the remainder thats why multiplying with r and not n
+            n = r * 10 + 1          # We only need the remainder thats why multiplying with r and not n
             c += 1
         return -1
 
