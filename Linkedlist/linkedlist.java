@@ -136,6 +136,8 @@ class Main{
         }
     }
 
+    more methods like reverse, middle of linked list, sort the linkedlist need to be added.
+
     public static void main(String[] args){
         LinkedList lst = new LinkedList();
         for(int i = 0; i < 5; i++){
